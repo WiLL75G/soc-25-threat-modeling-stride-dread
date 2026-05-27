@@ -100,7 +100,7 @@ Impact: Full account takeover without needing credentials
 ```
 ✅ HTTPS enforced on all connections
 ✅ Secure and HttpOnly cookie flags
-✅ Short session timeout — 30 minutes
+✅ Short session timeout 30 minutes
 ✅ Session token rotation after privilege change
 ```
 
@@ -129,7 +129,7 @@ Impact: Unauthorised access to backend services
 
 ---
 
-## T — Tampering Threats
+## T - Tampering Threats
 
 **Definition:** Attacker modifies data or code without authorisation.
 
@@ -150,7 +150,7 @@ Impact: Salary manipulation, HR record falsification,
 
 **Mitigation:**
 ```
-✅ Parameterised queries — prevent SQL injection
+✅ Parameterised queries prevent SQL injection
 ✅ Database activity monitoring (DAM)
 ✅ Write operations logged and alerted
 ✅ Database access requires Tier 1 approval
@@ -176,7 +176,7 @@ Impact: Data integrity loss, compliance violations,
 **Mitigation:**
 ```
 ✅ File integrity monitoring (FIM)
-✅ Immutable backups — cannot be deleted by users
+✅ Immutable backups cannot be deleted by users
 ✅ Version control on all critical documents
 ✅ Alerts on bulk file deletion or modification
 ```
@@ -185,14 +185,14 @@ Impact: Data integrity loss, compliance violations,
 
 ## R — Repudiation Threats
 
-**Definition:** User denies performing an action — no proof it happened.
+**Definition:** User denies performing an action no proof it happened.
 
 ---
 
 ### Threat R-01: Admin Action Repudiation
 ```
 Description: Admin performs a malicious action and claims
-             they never did it — no audit trail exists
+             they never did it no audit trail exists
 
 Attack vector: Shared admin accounts, disabled logging,
                log tampering
@@ -200,15 +200,15 @@ Attack vector: Shared admin accounts, disabled logging,
 Affected component: Admin Panel
 
 Impact: Inability to prove malicious insider activity
-        Compliance violations — SOX, GDPR, HIPAA
+        Compliance violations SOX, GDPR, HIPAA
 ```
 
 **Mitigation:**
 ```
-✅ Individual admin accounts — no shared credentials
-✅ Immutable audit logs — cannot be modified or deleted
+✅ Individual admin accounts no shared credentials
+✅ Immutable audit logs cannot be modified or deleted
 ✅ All admin actions logged with timestamp and user ID
-✅ Log forwarding to SIEM — logs exist outside the app
+✅ Log forwarding to SIEM logs exist outside the app
 ✅ Digital signatures on critical log entries
 ```
 
@@ -236,7 +236,7 @@ Impact: GDPR violation, employee PII exposed,
 
 **Mitigation:**
 ```
-✅ Encryption at rest — AES-256
+✅ Encryption at rest AES-256
 ✅ Column-level encryption for PII fields
 ✅ Database access restricted to application service account
 ✅ No direct user access to database layer
@@ -248,7 +248,7 @@ Impact: GDPR violation, employee PII exposed,
 ### Threat I-02: Error Message Information Leakage
 ```
 Description: Application error messages reveal internal
-             system details — stack traces, file paths,
+             system details stack traces, file paths,
              database schema, version numbers
 
 Attack vector: Intentional error triggering, fuzzing
@@ -264,7 +264,7 @@ Impact: Attacker learns system architecture
 ✅ Generic error messages shown to users
 ✅ Detailed errors logged internally only
 ✅ Application version numbers not exposed
-✅ HTTP headers stripped — no server version leakage
+✅ HTTP headers stripped no server version leakage
 ```
 
 ---
@@ -278,23 +278,23 @@ Impact: Attacker learns system architecture
 ### Threat D-01: HTTP Flood DDoS
 ```
 Description: Attacker floods the web application with HTTP
-             requests — overwhelming the server
+             requests overwhelming the server
 
 Attack vector: Botnet, amplification attack, volumetric flood
 
 Affected component: Load Balancer, Web Application Server
 
-Impact: Portal unavailable — employees cannot access HR
+Impact: Portal unavailable employees cannot access HR
         or payroll systems. Business operations disrupted.
 ```
 
 **Mitigation:**
 ```
 ✅ Web Application Firewall (WAF)
-✅ Rate limiting — 100 requests per minute per IP
+✅ Rate limiting 100 requests per minute per IP
 ✅ CDN with DDoS protection (Cloudflare, AWS Shield)
 ✅ Auto-scaling to absorb traffic spikes
-✅ SIEM alert — traffic anomaly detection
+✅ SIEM alert traffic anomaly detection
 ```
 
 ---
@@ -324,7 +324,7 @@ Impact: Employee A accesses Employee B's payroll data
 ✅ Server-side authorisation checks on every request
 ✅ Never trust client-supplied user IDs
 ✅ Object-level access control validation
-✅ SIEM alert — user accessing other users' records
+✅ SIEM alert user accessing other users' records
 ```
 
 ---
@@ -338,16 +338,16 @@ Attack vector: Broken access control, JWT manipulation,
 
 Affected component: Admin Panel, Authentication Service
 
-Impact: Full system compromise — attacker can modify
+Impact: Full system compromise attacker can modify
         any record, disable logging, create backdoors
 ```
 
 **Mitigation:**
 ```
-✅ Role verification on every admin endpoint — server side
-✅ JWT claims validation — reject tampered tokens
+✅ Role verification on every admin endpoint server side
+✅ JWT claims validation reject tampered tokens
 ✅ Admin actions require re-authentication
-✅ SIEM alert — standard user accessing admin endpoints
+✅ SIEM alert standard user accessing admin endpoints
 ```
 
 ---
