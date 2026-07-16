@@ -1,4 +1,4 @@
-# Day 25 – SOC Tier 1 Incident Report: Threat Modeling, STRIDE & DREAD.
+# SOC Tier 1 Incident Report: Threat Modeling, STRIDE & DREAD.
 
 ---
 
